@@ -1,7 +1,9 @@
 // 1. initialize candies array with 1 candy for each child
 // 2. left to right pass - if a child's rating is higher than their left neighbour, give them one more candy
-// 3. right to left pass - if a child's rating is higher than their left neighbour, give them one more candy
+// 3. right to left pass - if a child's rating is higher than their right neighbour, give them one more candy
 // 4. Sum the candies
+
+// Greedy Algorithm
 func candy(ratings []int) int {
     n := len(ratings)
     if n == 0 {
