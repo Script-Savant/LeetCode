@@ -1,12 +1,16 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {
-        for (int i = 0; i < nums.Length; i++){
-            for (int j = i+1; j < nums.Length; j++){
-                if (nums[i] + nums[j] == target){
-                    return new int[2] {i, j};
-                }
-            }
+        var seen = new Dictionary<int, int>();          
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            int complement = target - nums[i];
+            if (seen.TryGetValue(complement, out int j))      
+                return new[] { j, i };
+
+            seen[nums[i]] = i;                          
         }
-        return new int[0];
+
+        return Array.Empty<int>();   
     }
 }
