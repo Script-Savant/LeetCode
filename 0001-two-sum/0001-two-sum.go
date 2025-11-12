@@ -1,5 +1,3 @@
-import "fmt"
-
 func twoSum(nums []int, target int) []int {
     indexes := make(map[int]int)
 
@@ -9,7 +7,6 @@ func twoSum(nums []int, target int) []int {
         idx, ok := indexes[comp]
 
         if ok {
-            fmt.Println(idx)
             return []int{idx, index}
         } else {
             indexes[num] = index
